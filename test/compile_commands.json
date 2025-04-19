@@ -1,0 +1,12 @@
+[
+  {
+    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test",
+    "command": "g++ -c src/main.cpp -o build/main.o -I./inc -DDEBUG -Wall -g",
+    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test/src/main.cpp"
+  },
+  {
+    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test",
+    "command": "g++ -c src/test.cpp -o build/test.o -I./inc -DDEBUG -Wall -g",
+    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test/src/test.cpp"
+  }
+]

@@ -1,12 +1,12 @@
 [
   {
-    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test",
-    "command": "g++ -c src/main.cpp -o build/main.o -I./inc -DDEBUG -Wall -g",
-    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test/src/main.cpp"
+    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test",
+    "command": "g++ -c -o build/main.o -I/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test/inc -DDEBUG -Wall -g",
+    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test/src/main.cpp"
   },
   {
-    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test",
-    "command": "g++ -c src/test.cpp -o build/test.o -I./inc -DDEBUG -Wall -g",
-    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/test/src/test.cpp"
+    "directory": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test",
+    "command": "g++ -c -o build/test.o -I/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test/inc -DDEBUG -Wall -g",
+    "file": "/mnt/wsl/PHYSICALDRIVE2p1/workspaces/llvm/CodeChecker/test/src/test.cpp"
   }
 ]

@@ -37,8 +37,8 @@ def parse_with_compile_commands(source_file, db):
     index = clang.cindex.Index.create()
     args = load_compile_flags(db, source_file)
     print(f"args: {args}")
-    # return index.parse(source_file, args=['-std=c++11', '-I./test/inc']) #TODO: change args to use compilation database
-    return index.parse(source_file, args=['-I./test/inc', '-DDEBUG', '-Wall', '-g'])
+    # return index.parse(source_file, args=['-std=c++11', '-I./test/inc'])
+    return index.parse(source_file, args=args)
 
 def find_source_files(root_dir, extensions=('.c', '.cpp', '.cc', '.cxx')):
     sources = []
@@ -170,20 +170,17 @@ def print_call_graph(call_graph, start_func, lenght=0):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Generate Call Graph using libclang.")
     parser.add_argument("project_root", help="Path to the project root.")
-    parser.add_argument("--generate_compile_commands", action="store_true", help="Generate compile_commands.json.")
     parser.add_argument("--include", nargs='*', default=[], help="Include directories (-I).")
     parser.add_argument("--compiler", default="clang++", help="Compiler to use.")
     parser.add_argument("--flags", nargs='*', default=[], help="Extra compiler flags.")
 
     args = parser.parse_args()
     compile_commands_path = args.project_root + "/compile_commands.json"
-    extract_compile_commands_from_make(args.project_root, compile_commands_path, args.include, args.compiler, args.flags)
-
-    if args.generate_compile_commands:
-        sys.exit(1)
+    
+    if not os.path.exists(compile_commands_path):
+        extract_compile_commands_from_make(args.project_root, compile_commands_path, args.include, args.compiler, args.flags)
 
     db = load_compile_database(args.project_root)
-
     if not db:
         sys.exit(1)
 

@@ -4,6 +4,7 @@ class Client
 {
 public: 
     void run();
+    void init();
 
 private:
     int x;
@@ -12,6 +13,11 @@ private:
 void Client::run()
 {
     function();
+}
+
+void Client::init()
+{
+
 }
 
 Client c;

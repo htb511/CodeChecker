@@ -13,6 +13,9 @@ int functionx()
 int main()
 {
     LOG("Hello");
-    functionx();
+    if (1==1)
+        functionx();
+    else
+        function();
     return 0;
 }
